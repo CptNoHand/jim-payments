@@ -16,7 +16,7 @@ Config = {
 	List = true, -- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
 	PaymentRadius = 15, -- This is how far the playerlist will check for nearby players (based on the person charging)
 
-	Peds = true, -- "true" to enable peds spawning in banks
+	Peds = false, -- "true" to enable peds spawning in banks
 	PedPool = {
 		`IG_Bankman`,
 		`U_M_M_BankMan`,
@@ -65,7 +65,8 @@ Config = {
 		['popsdiner'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
 		['tequilala'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
 		['vanilla'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
-		['mechanic'] = { MinAmountforTicket = 1000, PayPerTicket = 500, Commission = 0.10, },
+		['mechanic'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.10, },
+		['lscustoms'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.10, },
 		['lostmc'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, gang = true, }, -- Example of a gang being supported
 	},
 
@@ -84,7 +85,7 @@ Config = {
 		['police'] = { Commission = 0.25, },
 		['ambulance'] = { Commission = 0.25, },
 	},
-	FineJobConfirmation = false, --"true" makes it so fines need confirmation, "false" skips this ands just removes the money
+	FineJobConfirmation = true, --"true" makes it so fines need confirmation, "false" skips this ands just removes the money
 	FineJobList = true, -- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
 
 	---------------------
