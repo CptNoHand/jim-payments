@@ -67,6 +67,7 @@ Config = {
 		['vanilla'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
 		['mechanic'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.10, },
 		['lscustoms'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.10, },
+		['taxi'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.10, },
 		['lostmc'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, gang = true, }, -- Example of a gang being supported
 	},
 
