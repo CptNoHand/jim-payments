@@ -45,7 +45,7 @@ Config = {
 	CashInLocation = vector4(252.23, 223.11, 106.29, 159.2), -- Default Third Window along in Pacific Bank
 
 	TicketSystem = true, -- Enable this if you want to use the ticket system false
-	TicketSystemAll = true, -- Enable this to give tickets to all workers clocked in
+	TicketSystemAll = false, -- Enable this to give tickets to all workers clocked in
 
 	Commission = true, -- Set this to true to enable Commissions and give the person charging a percentage of the total
 	CommissionAll = false, -- Set this to true to give commission to workers clocked in
@@ -57,17 +57,18 @@ Config = {
 	-- PayPerTicket should never be higher than MinAmountforTicket
 	-- Commission is a percentage eg "0.10" becomes 10%
 	Jobs = {
-		['beanmachine'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
-		['burgershot'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.10, },
-		['catcafe'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
-		['henhouse'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
-		['pizzathis'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
-		['popsdiner'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
-		['tequilala'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
-		['vanilla'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
-		['mechanic'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.10, },
-		['lscustoms'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.10, },
-		['taxi'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.10, },
+		['beanmachine'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
+		['burgershot'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.05, },
+		['catcafe'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
+		['henhouse'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
+		['pizzathis'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
+		['popsdiner'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
+		['tequilala'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
+		['vanilla'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
+		['mechanic'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.05, },
+		['lscustoms'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.05, },
+		['taxi'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.05, },
+		['ottos'] = { MinAmountforTicket = 500, PayPerTicket = 50, Commission = 0.05, },
 		['lostmc'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, gang = true, }, -- Example of a gang being supported
 	},
 
