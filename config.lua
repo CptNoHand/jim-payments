@@ -5,7 +5,7 @@ print("^2Jim^7-^2Payments v^42^7.^48 ^7- ^2Payments Script by ^1Jimathy^7")
 -- https://discord.gg/xKgQZ6wZvS
 
 Config = {
-	Lan = "en",
+	Lan = "de",
 	Debug = false,
 	Notify = "qb",
 	---------------------------------
@@ -61,7 +61,6 @@ Config = {
 		['beanmachine'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
 		['burgershot'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.05, },
 		['catcafe'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
-		['henhouse'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
 		['pizzathis'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
 		['popsdiner'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
 		['tequilala'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
@@ -70,6 +69,7 @@ Config = {
 		['lscustoms'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.05, },
 		['taxi'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.05, },
 		['ottos'] = { MinAmountforTicket = 500, PayPerTicket = 50, Commission = 0.05, },
+		['eastcustoms'] = { MinAmountforTicket = 250, PayPerTicket = 50, Commission = 0.05, },
 		['lostmc'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, gang = true, }, -- Example of a gang being supported
 	},
 
@@ -91,7 +91,7 @@ Config = {
 	FineJobConfirmation = true, --"true" makes it so fines need confirmation, "false" skips this ands just removes the money
 	FineJobList = true, -- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
 
-	ApGov = false, -- Add support for AP-Goverment Tax
+	ApGov = true, -- Add support for AP-Goverment Tax
 	---------------------
 	-- Banking Systems --
 	---------------------
