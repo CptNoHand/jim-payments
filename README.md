@@ -5,6 +5,9 @@
 ### If you need support I have a discord server available, it helps me keep track of issues and give better support.
 ## https://discord.gg/xKgQZ6wZvS
 
+### We also have Documentation over on Gitbook, feel free to check it out
+## https://jixelpatterns.gitbook.io/jixelpatterns-script-guide/overview/who-we-are
+
 ### If you think I did a good job here, consider donating as it keeps by lights on and my cat fat/floofy:
 ## https://ko-fi.com/jixelpatterns
 
@@ -33,6 +36,15 @@ ensure [defaultmaps]
 ensure [vehicles]
 #Extra Jim Stuff
 ensure [jim]
+```
+
+--- 
+## BZZ Terminal Instructions 
+Free Package https://bzzz.tebex.io/package/5551076
+
+Stream the prop and add the emote that is provided to rpemotes or dpemotes
+```lua
+	['terminal'] 			 = {['name'] = 'terminal', 				['label'] = 'Wireless Terminal', 				['weight'] = 5000, 		["type"] = "item", 		["image"] = 'terminal.png', 		['unique'] = true, 		['useable'] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ['description'] = ''},
 ```
 
 ---
@@ -81,9 +93,21 @@ TriggerEvent('jim-payments:Tickets:Give', { sender = Ply.PlayerData.charinfo.fir
 ```
 - The phone should now be integrated with jim-payments
 
----
+#### Renewed QB-Phone:
+- Go to `qb-phone > server > invoices.lua`
+- Search for the event: `qb-phone:server:PayMyInvoice` and search for this line:
+```lua
+TriggerEvent("qb-phone:server:InvoiceHandler", true, amount, src, resource)
+```
+
+- Directly under this line add this event:
+```lua
+TriggerEvent('jim-payments:Tickets:Give', { amount = amount, senderCitizenId = sendercitizenid, sender = SenderPly.PlayerData.charinfo.firstname, society = society }, SenderPly)
+```
+- When invoices are paid, they should now be integrated with jim-payments
+
 # Setup/Config
----
+
 ## Custom Locations
 
 - You can make of this payment system for a job script that wasn't created by me
@@ -175,3 +199,14 @@ FineJobList = true, -- "true" to use nearby player list feature in the cash regi
   - `ATMBlips` Enable this if you are a pyscho and need every ATM to be on the map too
   - `Gabz` Enable to change to Gabz Bank locations, this corrects the ATM/Bank Cashier + Ticket Cash in
 ---
+## Support for other scripts
+### Renewed-Banking
+  - Support for renewed banking added
+  - Toggle `RenewedBanking` in the config.lua to enable this
+
+### Renewed's qb-phone
+  - Simply leave the Config.PhoneType as `"qb"`
+
+### AP-Goverment
+- Support for AP-Goverment Tax on payments
+- Toggle `ApGov` in the config.lua to enable this

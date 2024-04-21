@@ -1,4 +1,4 @@
-print("^2Jim^7-^2Payments v^42^7.^48 ^7- ^2Payments Script by ^1Jimathy^7")
+print("^2Jim^7-^2Payments ^7v^42^7.^48^7.^45 ^7- ^2Payments Script by ^1Jimathy^7")
 
 -- If you need support I now have a discord available, it helps me keep track of issues and give better support.
 
@@ -7,15 +7,24 @@ print("^2Jim^7-^2Payments v^42^7.^48 ^7- ^2Payments Script by ^1Jimathy^7")
 Config = {
 	Lan = "de",
 	Debug = false,
-	Notify = "qb",
+	Notify = "qb",		-- "qb" | "okok" | "t" | "infinity" | "rr"
+	Menu = "ox",
+
 	---------------------------------
 	-- Default Job Payment Systems --
 	---------------------------------
-	Manage = true, -- "true" if using qb-management
-				-- "false" if using qb-bossmenu
+
+	Banking = "qb-management", 	
+								-- "qb-management" 	- This is for the older version of QBCore
+								-- "qb-banking" 	- This is for the latest QBCore updates
+								-- "renewed"
+								-- "fd" 			- currently default supported
+								-- "okok"			- make sure to add societies to Config.Societies in okokBanking, This is for the latest QBCore updates
+
+	ApGov = true, -- Toggle support for AP-Goverment Tax
 
 	List = true, -- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
-	PaymentRadius = 15, -- This is how far the playerlist will check for nearby players (based on the person charging)
+	PaymentRadius = 5, -- This is how far the playerlist will check for nearby players (based on the person charging)
 
 	Peds = false, -- "true" to enable peds spawning in banks
 	PedPool = {
@@ -35,7 +44,10 @@ Config = {
 		`U_F_M_CasinoShop_01`,
 	},
 
-	PhoneBank = false, -- Set this to false to use the popup payment system FOR CARD/BANK PAYMENTS instead of using phone invoices
+	Usebzzz = false, -- enable if you're using the prop from bzzz
+	Enablecommand = true, -- Enables the cashregister command
+
+	PhoneBank = false, 	-- Set this to false to use the popup payment system FOR CARD/BANK PAYMENTS instead of using phone invoices
 						-- This doesn't affect Cash payments as they by default use confirmation now
 						-- This is helpful for phones that don't support invoices well
 
@@ -49,8 +61,8 @@ Config = {
 	TicketSystemAll = false, -- Enable this to give tickets to all workers clocked in
 
 	Commission = true, -- Set this to true to enable Commissions and give the person charging a percentage of the total
-	CommissionAll = false, -- Set this to true to give commission to workers clocked in
-	CommissionDouble = false, -- Set this to true if you want the person charging to get double Commission
+	CommissionAll = true, -- Set this to true to give commission to workers clocked in
+	CommissionDouble = true, -- Set this to true if you want the person charging to get double Commission
 	CommissionLimit = false,	-- If true, this limits the Commission to only be given if over the "MinAmountForTicket".
 								-- If false, Commission will be given for any amount
 
@@ -58,23 +70,37 @@ Config = {
 	-- PayPerTicket should never be higher than MinAmountforTicket
 	-- Commission is a percentage eg "0.10" becomes 10%
 	Jobs = {
+		-- Jim Businesses | https://jimathy666.tebex.io/
+		['bakery'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
 		['beanmachine'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
-		['burgershot'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
+		['burgershot'] = { MinAmountforTicket = 5, PayPerTicket = 200 , Commission = 0.10, },
+		['catcafe'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['henhouse'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['pizzathis'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['popsdiner'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['tequilala'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['vanilla'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
 		['upnatom'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
-		['catcafe'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
-		['rockfordrecords'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
-		['pizzathis'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
-		['popsdiner'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
-		['tequilala'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
-		['vanilla'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
-		['mechanic'] = { MinAmountforTicket = 1000, PayPerTicket = 200, Commission = 0.10, },
-		['lscustoms'] = { MinAmountforTicket = 1000, PayPerTicket = 200, Commission = 0.10, },
-		['taxi'] = { MinAmountforTicket = 1000, PayPerTicket = 200, Commission = 0.10, },
-		['ottos'] = { MinAmountforTicket = 200, PayPerTicket = 200, Commission = 0.10, },
-		['lsmotors'] = { MinAmountforTicket = 250, PayPerTicket = 200, Commission = 0.10, },
-		['bennystuners'] = { MinAmountforTicket = 250, PayPerTicket = 200, Commission = 0.10, },
-		['redline'] = { MinAmountforTicket = 250, PayPerTicket = 200, Commission = 0.10, },
-		['lostmc'] = { MinAmountforTicket = 20, PayPerTicket = 50, Commission = 0.10, gang = true, }, -- Example of a gang being supported
+		['hornys'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+
+		-- JixelTay Businesses | https://jixeltay.tebex.io/
+		['cigarbar'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['cluckinbell'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['smokeshop'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['pearls'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['kois'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['whitewidow'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['bestbuds'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+
+		-- Jim Mechanic | https://jimathy666.tebex.io/
+		['mechanic'] = { MinAmountforTicket = 1000, PayPerTicket = 2000, Commission = 0.10, },
+		['tuners'] = { MinAmountforTicket = 1000, PayPerTicket = 2000, Commission = 0.10, },
+		['ottos'] = { MinAmountforTicket = 1000, PayPerTicket = 2000, Commission = 0.10, },
+		['lscustoms'] = { MinAmountforTicket = 1000, PayPerTicket = 2000, Commission = 0.10, },
+		['bennys'] = { MinAmountforTicket = 1000, PayPerTicket = 2000, Commission = 0.10, },
+
+		-- Gangs | Example of a gang being supported
+		['lostmc'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, gang = true, },
 	},
 
 	------------------------------
@@ -83,7 +109,10 @@ Config = {
 	-- This adds the ability to add multiple locations for each job
 	-- Basically adding ready made locations, all you need to a vector4 and to confrim if you need a new prop in that location
     CustomCashRegisters = {
-
+		-- ["jobname"] = { -- Player job role restriction
+		-- 	{ coords = vector4(0, 0, 0, 0), prop = true, }, -- vector4 to place the till and the way it faces
+		-- 	{ coords = vector4(0, 0, 0, 0), prop = true, }, -- "prop = true" spawns a prop at the coords
+		-- },
 	},
 
 	-- The /polcharge command requires specific jobs to be set
@@ -98,7 +127,6 @@ Config = {
 	FineJobConfirmation = true, --"true" makes it so fines need confirmation, "false" skips this ands just removes the money
 	FineJobList = true, -- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
 
-	ApGov = true, -- Add support for AP-Goverment Tax
 	---------------------
 	-- Banking Systems --
 	---------------------
