@@ -43,7 +43,7 @@ Config = {
 						-- "qb" for qb-phone
 						-- "gks"" for GKSPhone
 
-	CashInLocation = vector4(252.23, 223.11, 106.29, 159.2), -- Default Third Window along in Pacific Bank
+	CashInLocation = vector4(268.33, 217.69, 106.28, 246.26), -- Default Third Window along in Pacific Bank
 
 	TicketSystem = true, -- Enable this if you want to use the ticket system false
 	TicketSystemAll = false, -- Enable this to give tickets to all workers clocked in
@@ -58,19 +58,23 @@ Config = {
 	-- PayPerTicket should never be higher than MinAmountforTicket
 	-- Commission is a percentage eg "0.10" becomes 10%
 	Jobs = {
-		['beanmachine'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
-		['burgershot'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.05, },
-		['catcafe'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
-		['pizzathis'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
-		['popsdiner'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
-		['tequilala'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
-		['vanilla'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.05, },
-		['mechanic'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.05, },
-		['lscustoms'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.05, },
-		['taxi'] = { MinAmountforTicket = 1000, PayPerTicket = 50, Commission = 0.05, },
-		['ottos'] = { MinAmountforTicket = 500, PayPerTicket = 50, Commission = 0.05, },
-		['eastcustoms'] = { MinAmountforTicket = 250, PayPerTicket = 50, Commission = 0.05, },
-		['lostmc'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, gang = true, }, -- Example of a gang being supported
+		['beanmachine'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
+		['burgershot'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
+		['upnatom'] = { MinAmountforTicket = 5, PayPerTicket = 200, Commission = 0.10, },
+		['catcafe'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
+		['rockfordrecords'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
+		['pizzathis'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
+		['popsdiner'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
+		['tequilala'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
+		['vanilla'] = { MinAmountforTicket = 20, PayPerTicket = 200, Commission = 0.10, },
+		['mechanic'] = { MinAmountforTicket = 1000, PayPerTicket = 200, Commission = 0.10, },
+		['lscustoms'] = { MinAmountforTicket = 1000, PayPerTicket = 200, Commission = 0.10, },
+		['taxi'] = { MinAmountforTicket = 1000, PayPerTicket = 200, Commission = 0.10, },
+		['ottos'] = { MinAmountforTicket = 200, PayPerTicket = 200, Commission = 0.10, },
+		['lsmotors'] = { MinAmountforTicket = 250, PayPerTicket = 200, Commission = 0.10, },
+		['bennystuners'] = { MinAmountforTicket = 250, PayPerTicket = 200, Commission = 0.10, },
+		['redline'] = { MinAmountforTicket = 250, PayPerTicket = 200, Commission = 0.10, },
+		['lostmc'] = { MinAmountforTicket = 20, PayPerTicket = 50, Commission = 0.10, gang = true, }, -- Example of a gang being supported
 	},
 
 	------------------------------
@@ -85,8 +89,11 @@ Config = {
 	-- The /polcharge command requires specific jobs to be set
 	-- No tickets for these, it's just commission (0.25 = 25%)
 	FineJobs = {
-		['police'] = { Commission = 0.25, },
-		['ambulance'] = { Commission = 0.25, },
+		['police'] = { Commission = 0.10, },
+		['sheriff'] = { Commission = 0.10, },
+		['detectives'] = { Commission = 0.10, },
+		['ambulance'] = { Commission = 0.15, },
+		['lsfd'] = { Commission = 0.15, },
 	},
 	FineJobConfirmation = true, --"true" makes it so fines need confirmation, "false" skips this ands just removes the money
 	FineJobList = true, -- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
@@ -95,9 +102,9 @@ Config = {
 	---------------------
 	-- Banking Systems --
 	---------------------
-	useATM = false, -- Enable this to use the scripts ATM's and controls
-	useBanks = false, -- Enable this to use my banking stuff
-	BankBlips = false, -- Enable this if you disabled qb-banking and need bank locations
+	useATM = true, -- Enable this to use the scripts ATM's and controls
+	useBanks = true, -- Enable this to use my banking stuff
+	BankBlips = true, -- Enable this if you disabled qb-banking and need bank locations
 	ATMBlips = false, -- Enable this if you are a pyscho and need every ATM to be on the map too
 
 	Gabz = true, 	-- "true" to enable Gabz Bank locations

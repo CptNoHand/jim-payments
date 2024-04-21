@@ -1,7 +1,7 @@
 Loc["de"] = {
     error = {
         ["cancel"] = "Abgebrochen",
-        ["no_one"] = "Keiner in der Nähe zum Aufladen",
+        ["no_one"] = "Keiner in der Nähe zum Transfer",
         ["not_onduty"] = "Nicht eingestempelt!",
         ["no_job"] = "Sie haben nicht den gewünschten Beruf",
         ["no_ticket"] = "Sie haben keine Tickets zum Tauschen",
@@ -78,7 +78,7 @@ Loc["de"] = {
         ["close"] = "Schließen",
         ["withdraw"] = "Abheben",
         ["deposit"] = "Einzahlen",
-        ["transfer"] = "Überweißen",
+        ["transfer"] = "Überweisen",
         ["transfer_money"] = "Geld überweisen",
         ["header_atm"] = "💵 ATM Banking 💵",
         ["header_trans_amount"] = "💵 Überweisungsbetrag",
